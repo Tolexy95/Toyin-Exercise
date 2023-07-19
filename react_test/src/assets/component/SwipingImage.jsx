@@ -44,8 +44,8 @@ const SwipingImage = () => {
         <p className="PLoading" style={{ opacity: "0" }}>
           {isLoading}Loading
         </p>
-        <p>${imageData.price}</p>
-        <p>{imageData.description}</p>
+        <p>Price: ${imageData.price}</p>
+        <p>Description: {imageData.description}</p>
       </div>
       <div className="btnContainer">
         <button onClick={handlePrevImage}>Prev</button>
