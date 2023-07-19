@@ -5,7 +5,7 @@ const SwipingImage = () => {
   const [productID, setProductID] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchWord = async () => {
+  const fetchWord = async () => {     
     setIsLoading(true);
     try {
       const response = await fetch(
