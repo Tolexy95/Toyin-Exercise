@@ -40,7 +40,7 @@ const SwipingImage = () => {
     <div>
       <div className="firstImage">
         <h1>{imageData.title}</h1>
-        <img src={imageData.images && imageData.images[0]} alt="" />
+        <img src={imageData.images && imageData.images[0]} alt="" className="imageDisplay" />
         <p className="PLoading" style={{ opacity: "0" }}>
           {isLoading}Loading
         </p>
