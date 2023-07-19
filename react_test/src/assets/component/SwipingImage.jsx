@@ -4,7 +4,6 @@ const SwipingImage = () => {
   const [imageData, setImageDate] = useState([]);
   const [productID, setProductID] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  
 
   const fetchWord = async () => {
     try {
@@ -25,18 +24,16 @@ const SwipingImage = () => {
 
   const handlePrevImage = () => {
     setTimeout(() => {
-        setIsLoading(true)
-        setProductID((productID) => productID - 1);
-    }, 2000)
-    
+      setIsLoading(true);
+      setProductID((productID) => productID - 1);
+    }, 2000);
   };
 
   const handleNextImage = () => {
     setTimeout(() => {
-        setIsLoading(true)
-        setProductID((productID) => productID + 1);
-    }, 2000)
-    
+      setIsLoading(true);
+      setProductID((productID) => productID + 1);
+    }, 2000);
   };
 
   return (
@@ -44,18 +41,18 @@ const SwipingImage = () => {
       <div className="firstImage">
         <h1>{imageData.title}</h1>
         <img src={imageData.images && imageData.images[0]} alt="" />
-        <p className="PLoading" style={{opacity: "0"}}>{isLoading}Loading</p>
+        <p className="PLoading" style={{ opacity: "0" }}>
+          {isLoading}Loading
+        </p>
         <p>${imageData.price}</p>
         <p>{imageData.description}</p>
       </div>
-
-      <button onClick={handlePrevImage}>Prev</button>
-      <button onClick={handleNextImage}>Next</button>
-     
+      <div className="btnContainer">
+        <button onClick={handlePrevImage}>Prev</button>
+        <button onClick={handleNextImage}>Next</button>
+      </div>
     </div>
   );
 };
 
 export default SwipingImage;
-
-
