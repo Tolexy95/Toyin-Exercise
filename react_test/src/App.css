@@ -11,6 +11,7 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  gap: 30px;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
   background-color: rgb(22, 46, 46);
   padding: 20px;
   box-shadow: 2px 13px 14px 2px rgba(0, 0, 0, 0.2);
+  /* flex: 1; */
 }
 
 .wordContainer{
@@ -67,7 +69,22 @@ h1{
 p {
   font-size: 16px;
 }
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
+input{
+  padding: 1rem 3rem;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+}
+.btnClicked{
+  width: 60%;
+  margin: auto;
+}
 @media screen and (max-width: 650px){
   .wrapper{
     width: 400px;

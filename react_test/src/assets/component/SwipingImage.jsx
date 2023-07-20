@@ -4,6 +4,12 @@ const SwipingImage = () => {
   const [imageData, setImageDate] = useState([]);
   const [productID, setProductID] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+//   const [inputValue, setInputValue] = useState("");
+
+  const newInputValue = (e) => {
+    const newValue = e.currentTarget.value;
+    setProductID(newValue);
+  };
 
   const fetchWord = async () => {     
     setIsLoading(true);
@@ -23,9 +29,10 @@ const SwipingImage = () => {
 
   useEffect(() => {
     fetchWord();
-  }, [productID]);
+  }, []);
 
-  const handlePrevImage = () => {
+ 
+const handlePrevImage = () => {
     setProductID((productID) => productID - 1);
   };
 
@@ -33,13 +40,20 @@ const SwipingImage = () => {
     setProductID((productID) => productID + 1);
   };
 
+//   const getInputData = () => {
+//     setInputValue(productID)
+//   }
+
   if (isLoading) {
     return <h1>Loading ...</h1>;
   }
+
+
   return (
     <div className="App">
       <div className="wrapper">
         <div className="firstImage">
+            <p>{imageData.id}</p>
           <h1>{imageData.title}</h1>
           <div className="imageContainer">
             <img
@@ -59,6 +73,15 @@ const SwipingImage = () => {
           <button onClick={handlePrevImage}>Prev</button>
           <button onClick={handleNextImage}>Next</button>
         </div>
+      </div>
+
+      <div className="inputContainer">
+        <input type="text"
+        // value={inputValue}
+        onInput={newInputValue}
+        
+        />
+        <button className="btnClicked" onClick={fetchWord}>Move to the desired page</button>
       </div>
     </div>
   );
